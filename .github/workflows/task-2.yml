@@ -14,7 +14,7 @@ jobs:
       - name: Upload output log
         uses: actions/upload-artifact@v4
         with:
-          name: hello-log
+          name: output-log
           path: day-1/output.log
 
 
@@ -29,8 +29,8 @@ jobs:
       - name: Download log file
         uses: actions/download-artifact@v4
         with:
-          name: output.log
-          path: day-1/output.log
+          name: output-log
+          path: ./
 
       - name: Print log file content
-        run: cat day-1/output.log
+        run: cat output.log
