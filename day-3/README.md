@@ -39,6 +39,7 @@ We will use the same app that we have worked on in day-1. Perform the below task
       uses: actions/download-artifact@v4
       with:
         name: hello-log
+        path: ./
 ```
 - Ensure the needs: keyword is used correctly so read-log runs only after say-hello.
 
