@@ -18,9 +18,11 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: ./day-1
         run: npm install
 
       - name: Run the app
+        working-directory: ./day-1
         run: npm start
         env:
           USERNAME: ${{ github.actor }}
@@ -29,5 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: hello-log
-          path: output.log
-
+          path: day-1/output.log
