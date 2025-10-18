@@ -1,4 +1,4 @@
-name: Hello GitHub Actions
+name: Task-2
 
 on:
   push:
@@ -7,31 +7,13 @@ on:
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        working-directory: ./day-1
-        run: npm install
-
-      - name: Run the app
-        working-directory: ./day-1
-        run: npm start
-        env:
-          USERNAME: ${{ github.actor }}
-
       - name: Upload output log
         uses: actions/upload-artifact@v4
         with:
           name: hello-log
-          path: ./output.log
+          path: day-1/output.log
+
 
   read-log:
     needs: say-hello
@@ -42,6 +24,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: hello-log
+          path: day-1/output.log
 
       - name: Print log file content
         run: cat output.log

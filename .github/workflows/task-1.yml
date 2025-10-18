@@ -1,4 +1,4 @@
-name: Hello GitHub Actions
+name: Task-1
 
 on:
   push:
@@ -16,22 +16,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
-      - name: Install dependencies
-        working-directory: ./day-1
-        run: npm install
-
-      - name: Run the app
-        working-directory: ./day-1
-        run: npm start
-        env:
-          USERNAME: ${{ github.actor }}
-
-      - name: Upload output log
-        uses: actions/upload-artifact@v4
-        with:
-          name: hello-log
-          path: day-1/output.log
 
   check-node-version:
     needs: say-hello
