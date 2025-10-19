@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'  # built-in caching for npm dependencies
           cache-dependency-path: weather-app/package-lock.json
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint the code
         run: npm run lint
@@ -33,9 +33,3 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Upload test results
-        if: always()  # ensures test results are uploaded even if tests fail
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: ./weather-app/test-results/
