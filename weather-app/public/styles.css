@@ -1,0 +1,126 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-dark: #333;
+  --text-light: #555;
+  --accent: #0077ff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+}
+
+button {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+.card {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.city-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#weather-icon {
+  width: 80px;
+  height: 80px;
+}
+
+#temperature {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.extra, .details {
+  margin-top: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

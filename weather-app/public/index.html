@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp ☀️</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">🌦️ WeatherApp</h1>
+
+      <form id="weather-form">
+        <input
+          type="text"
+          id="city-input"
+          placeholder="Enter a city..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="weather-result" class="card hidden">
+        <h2 id="city-name" class="city-name"></h2>
+        <div class="weather-main">
+          <img id="weather-icon" alt="Weather Icon" />
+          <p id="condition"></p>
+          <p id="temperature"></p>
+        </div>
+        <div id="extra-metrics" class="extra">
+          <p id="feels-like"></p>
+          <p id="temp-range"></p>
+        </div>
+        <div id="details" class="details">
+          <p id="wind"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
