@@ -37,7 +37,7 @@ form.addEventListener("submit", async (e) => {
     icon.alt = data.weather.description;
 
     resultCard.classList.remove("hidden");
-  } catch (err) {
+  } catch {
     alert("⚠️ Unable to fetch weather data. Please try again later.");
   }
 
